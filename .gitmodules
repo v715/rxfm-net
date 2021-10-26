@@ -1,0 +1,3 @@
+[submodule "se3cnn"]
+	path = se3cnn
+	url = https://github.com/mariogeiger/se3cnn.git
