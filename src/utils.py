@@ -37,7 +37,8 @@ def pad_to_size( vol, size ):
     mod = raw_diff % 2
     if raw_diff < 0:
       pads.extend([0,0])
-    pads.extend([diff, diff + mod])
+    else:
+      pads.extend([diff, diff + mod])
 
   return F.pad( vol, pads, mode="constant", value=0 )
 
