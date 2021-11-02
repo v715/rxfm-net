@@ -91,7 +91,7 @@ loader_dict = {
 # %%
 import matplotlib.pyplot as plt
 
-get_ipython().run_line_magic("matplotlib", "inline")
+# get_ipython().run_line_magic("matplotlib", "inline")
 
 from nilearn import plotting
 import seaborn_image as isns
@@ -280,7 +280,7 @@ rz_widget = widgets.FloatSlider(
 vol = img_vol[0, 0, ...].cpu()
 # this jupyter magick makes the notebook update the current plot instead of building a new plot each time...I think
 #%matplotlib widget
-get_ipython().run_line_magic("matplotlib", "inline")
+# get_ipython().run_line_magic("matplotlib", "inline")
 from pytorch3d import transforms as pt3d_xfms
 
 net_obj.eval()
