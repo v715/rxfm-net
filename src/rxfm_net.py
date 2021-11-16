@@ -104,6 +104,7 @@ class RXFM_Net_Wrapper(nn.Module):
         input_1, input_2 = x
         output_1 = self.rxfm_net_obj.forward(input_1)
         output_2 = self.rxfm_net_obj.forward(input_2)
+        # print("HELLO!:", output_1.shape, output_2.shape)
 
         means_1, weights_1 = self.sm_obj.forward(output_1)
         means_2, weights_2 = self.sm_obj.forward(output_2)
@@ -111,7 +112,7 @@ class RXFM_Net_Wrapper(nn.Module):
         w = weights_1 * weights_2
 
         xfms = pts_to_xfms(means_2, means_1, self.img_shape_tensor, w, w)
-        return xfms
+        return xfms, output_1, output_2
 
     def get_channel_outputs(self, x):
         return self.rxfm_net_obj.forward(x)
